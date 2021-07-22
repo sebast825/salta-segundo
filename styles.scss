@@ -1,0 +1,245 @@
+@import "actividades";
+*{
+    margin: 0;
+    padding: 0;
+   background: #EB950E;
+   box-sizing: border-box;
+}
+@mixin colorDiv {
+    background:rgba(187, 71, 14, 1)  ;
+}
+@mixin colorCaja {
+    background: #6AC9D6;
+}
+@mixin colorCirculo{
+    background: #088784;
+}
+
+h1{
+    margin: 2rem;
+    font-size: 5rem;
+    text-align: center;
+}
+header{
+    height:2rem;
+    @include colorDiv();
+    a{
+        text-decoration: none;
+        text-transform: none;
+        font-size: 1.5rem;
+        margin: 1rem 2rem;
+        background: none;
+        color: white;
+    }
+}
+@keyframes escala{
+    0%{transform: rotate(0deg)};
+    
+    100%{transform: rotate(360deg)}
+
+}
+
+.inicio{
+    width: 100%;
+    height: 30rem;    
+    
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    
+        .inicio__img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            position: absolute;
+            
+    }
+        .inicio__titulo{
+            font-size: 32rem ;
+            background: none;
+            position: relative;
+            align-self: center;
+            
+           
+            opacity: 0.4;
+            color: white;
+        }
+}
+
+
+
+.contenedor{
+    width: 80vw;
+    height: 30rem auto;
+    
+    @include colorDiv();
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-content: center;
+    margin: 4rem  auto;
+  
+    .contenedor__caja{
+        width: 20rem;
+        height: 24rem;
+        color: red;
+        @include colorCaja();
+       
+        border: 2px solid black;
+        font-size: 5rem;
+        border-radius: 10px;
+        position: relative;
+        margin: 4rem 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .contenedor__circulo{
+            width: 7rem;
+            height: 7rem;
+            border: 2px solid black;
+            @include colorCirculo();
+            top: -50%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            
+            a {
+                color:white;
+                font-size: 4rem;
+                font-weight: 700;
+                overflow: hidden;
+                text-decoration: none;   
+                transition: all 2s linear ;  
+                background: none;                
+                position: relative;
+                &:hover{
+                    animation: escala 1.3s;                    
+                   
+                                     
+                }
+                
+                }
+            &--p{
+                font-size: 5rem;
+                position: absolute;
+                opacity: 0;
+                transition: all 2s ease-in infinite;
+
+                &:hover{
+                    opacity: 1;
+                    
+                }
+            }     
+            }
+        }
+    
+        .contenedor__titulo{
+            position: absolute;
+            width: 100%;
+            height: 55%;
+            justify-content: center;
+            align-items: center;       
+            display: flex;
+            
+            overflow: hidden;    
+            opacity: 0;   
+            transition: all 0.4s ease-in;
+            background: rgba(106, 201, 214, 0.5);
+            &:hover{
+                opacity: 1;
+            }
+            &--car{
+                color: black;
+                
+                font-size: 3rem ;
+                font-weight: 700;
+                
+                text-shadow: 0 0 5px white;
+                
+            }
+    }
+    
+    
+        
+        .contenedor__img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            position: absolute;
+            
+        }
+    }
+
+
+    
+.actividad{
+    margin: 5rem auto;
+    width: 80vw;
+    display: grid;
+   grid-template-columns: 400px 1fr ;
+    @include colorDiv();
+    padding: 1rem;
+    grid-gap: 5rem;
+    border-radius:10px ;
+    img{
+        width: 100%; 
+        border-radius: 1rem;
+        object-fit: contain;
+    }
+  .actividad__texto{
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-gap: 1rem ;
+      background: none;
+     
+    h2{
+        font-size: 2.5rem;
+        background: none;
+        color: #ddd;
+    }
+    p{
+        font-size: 1.3rem;
+        background: none;
+        color: #ddd;
+    }
+    
+  }
+}
+
+
+    
+
+
+@media screen and (max-width:720px) {
+    h1{
+        font-size: 4rem;
+        text-align: center;
+    }
+    .inicio{
+        .inicio__titulo{
+            font-size: 7rem;
+        }
+    }
+    .actividad{
+        width: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto 1fr;
+        margin: 1rem auto;
+        grid-gap:0.5rem;
+    }
+    .actividad__texto{
+        grid-row:1;
+    }
+    .contenedor{
+        margin: auto;
+        width: auto;
+    }
+}
