@@ -248,9 +248,18 @@ header a {
 }
 
 @media screen and (max-width: 720px) {
+  * {
+    width: 100%;
+  }
   h1 {
     font-size: 4rem;
+    margin-left: -0.2rem;
+  }
+  h3 {
+    font-size: 3rem;
     text-align: center;
+    margin: auto;
+    padding: 1rem;
   }
   .inicio .inicio__titulo {
     font-size: 7rem;
